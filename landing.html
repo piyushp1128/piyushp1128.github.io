@@ -136,7 +136,7 @@
     <div class="container">
         <header class="header">
             <div>
-                <h1 class="header-title">Piyush</h1>
+                <h1 class="header-title">Krishna Patil</h1>
                 <p class="header-subtitle">Software Developer | Open Source Enthusiast</p>
             </div>
             <nav>
@@ -163,10 +163,10 @@
 
     <script>
         // GitHub username - REPLACE WITH YOUR GITHUB USERNAME
-        const USERNAME = 'piyushp1128';
+        const USERNAME = `piyushp1128`;
 
-        
-        const API_URL = 'https://api.github.com/users/${USERNAME}/repos';
+        // GitHub API endpoint for user repositories
+        const API_URL = `https://api.github.com/users/${USERNAME}/repos`;
 
         // Function to fetch repositories
         async function fetchRepositories() {
@@ -191,8 +191,6 @@
                          // Skip forks if you want only original repositories
                          if (repo.fork) return;
 
-                         // Check if the repository has a GitHub Pages deployment
-                         const hostedLink = 'https://outlawatlas.github.io/pulsepro';
 
                          const repoCard = document.createElement('div');
                          repoCard.classList.add('project-card');
