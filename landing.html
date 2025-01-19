@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #000;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            background-color: #00c6ff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #007acc;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+        }
+
+        .feature {
+            flex: 1;
+            text-align: center;
+            margin: 0 15px;
+        }
+
+        .feature img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .cta {
+            background: linear-gradient(to right, #43cea2, #185a9d);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 50px 0;
+        }
+
+        .cta h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .cta button {
+            background-color: #007acc;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta button:hover {
+            background-color: #005f99;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #00c6ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .repositories {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .repositories ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .repositories ul li {
+            margin: 10px 0;
+        }
+
+        .repositories ul li a {
+            color: #007acc;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .repositories ul li a:hover {
+            color: #005f99;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">BrandName</div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Our Website</h1>
+            <p>Discover the amazing features and benefits of our product or service.</p>
+            <button>Get Started</button>
+        </div>
+    </section>
+
+    <section class="features container">
+        <div class="feature">
+            <img src="https://via.placeholder.com/100" alt="Feature 1">
+            <h3>Feature One</h3>
+            <p>Short description about the feature.</p>
+        </div>
+        <div class="feature">
+            <img src="https://via.placeholder.com/100" alt="Feature 2">
+            <h3>Feature Two</h3>
+            <p>Short description about the feature.</p>
+        </div>
+        <div class="feature">
+            <img src="https://via.placeholder.com/100" alt="Feature 3">
+            <h3>Feature Three</h3>
+            <p>Short description about the feature.</p>
+        </div>
+    </section>
+
+    <section class="repositories">
+        <div class="container">
+            <h2>My Repositories</h2>
+            <ul id="repo-list">
+                <li>Loading repositories...</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to get started?</h2>
+            <button>Sign Up Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BrandName. All rights reserved. <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        async function fetchRepositories() {
+            const username = "piyushp1128"; // Replace with your GitHub username
+            const repoList = document.getElementById('repo-list');
+
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}/repos`);
+                const repos = await response.json();
+
+                repoList.innerHTML = ""; // Clear the loading message
+
+                repos.forEach(repo => {
+                    const repoItem = document.createElement('li');
+                    const repoLink = document.createElement('a');
+                    repoLink.href = repo.html_url.replace("github.com", "github.io"); // Adjust for deployment
+                    repoLink.target = "_blank";
+                    repoLink.textContent = repo.name;
+                    repoItem.appendChild(repoLink);
+                    repoList.appendChild(repoItem);
+                });
+            } catch (error) {
+                repoList.innerHTML = '<li>Failed to load repositories. Please try again later.</li>';
+                console.error('Error fetching repositories:', error);
+            }
+        }
+
+        fetchRepositories();
+    </script>
+</body>
+</html>
